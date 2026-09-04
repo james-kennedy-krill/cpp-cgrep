@@ -1,7 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-#include "cgrep/version.hpp"
 #include "format_util.hpp"
 
 using cgrep::format_bytes;
@@ -22,9 +21,4 @@ TEST_CASE("format_bytes steps up through binary units") {
 
 TEST_CASE("format_bytes saturates at the largest unit") {
   CHECK(format_bytes(5ULL * 1024 * 1024 * 1024 * 1024 * 1024) == "5120.0 TiB");
-}
-
-TEST_CASE("version is populated from CMake") {
-  CHECK(cgrep::kName == "cgrep");
-  CHECK(!cgrep::kVersion.empty());
 }

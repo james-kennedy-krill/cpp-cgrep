@@ -58,7 +58,7 @@ target_link_libraries(cgrep PRIVATE cgrep_core cgrep_warnings)
 # ---------------------------------------------------------------- tests
 enable_testing()
 
-add_executable(cgrep_tests tests/test_format_util.cpp)
+add_executable(cgrep_tests tests/test_format_util.cpp tests/test_version.cpp)
 target_link_libraries(cgrep_tests PRIVATE cgrep_core doctest::doctest cgrep_warnings)
 
 add_test(NAME unit COMMAND cgrep_tests)
