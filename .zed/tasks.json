@@ -1,0 +1,26 @@
+[
+  {
+    "label": "build",
+    "command": "cmake --build --preset debug",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  },
+  {
+    "label": "test",
+    "command": "ctest --preset debug",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  },
+  {
+    "label": "asan",
+    "command": "cmake --build --preset asan; and ctest --preset asan",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  },
+  {
+    "label": "release",
+    "command": "cmake --build --preset release",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "reveal": "always"
+  }
+]
