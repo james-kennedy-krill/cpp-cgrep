@@ -41,7 +41,8 @@ configure_file(
 # ---------------------------------------------------------------- core library
 add_library(cgrep_core
     src/format_util.cpp
-    src/walk.cpp)
+    src/walk.cpp
+    src/file_reader.cpp)
 
 target_include_directories(cgrep_core
     PUBLIC
@@ -62,7 +63,8 @@ enable_testing()
 add_executable(cgrep_tests
     tests/test_format_util.cpp
     tests/test_version.cpp
-    tests/test_walk.cpp)
+    tests/test_walk.cpp
+    tests/test_file_reader.cpp)
 target_link_libraries(cgrep_tests PRIVATE cgrep_core doctest::doctest cgrep_warnings)
 
 include("${doctest_SOURCE_DIR}/scripts/cmake/doctest.cmake")
